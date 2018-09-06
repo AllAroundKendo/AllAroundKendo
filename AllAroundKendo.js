@@ -1,9 +1,11 @@
+'use strict';
 // Define the `AllAroundKendo` module
 var AllAroundKendo = angular.module('AllAroundKendo', ["ngTable"]);
 
-// Define the `PhoneListController` controller on the `AllAroundKendo` module
-AllAroundKendo.controller('DojoController', function DojoController($scope, $http) {
-    var dojos = [
+// Define the `DojoController` controller on the `AllAroundKendo` module
+AllAroundKendo.controller('DojoController', function DojoController($scope, $http, NgTableParams) {
+    var self = this;
+    var data = [
         {
             name: 'Seigakukan',
             address: '9 impasse des arènes',
@@ -30,6 +32,5 @@ AllAroundKendo.controller('DojoController', function DojoController($scope, $htt
             country: 'France'
         }
     ];
-    var self = this;
-    self.tableParams = new NgTableParams({}, { dataset: dojos });
+    self.tableParams = new NgTableParams({}, { dataset: data });
 });
