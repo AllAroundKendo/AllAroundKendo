@@ -18,29 +18,42 @@
         crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
         crossorigin="anonymous"></script>
+
+    <!-- ui bootstrap -->
+    <script src="ui-bootstrap-2.5.0.js"></script>
 </head>
 
 <body ng-controller='DojoController as dojo'>
+    <uib-tabset active="active">
+        <uib-tab index="0" heading="Liste of dojos">
+            <table ng-table="dojo.tableParams" class="table" show-filter="true">
+                <tr ng-repeat="user in $data">
+                    <td title="'Name'" filter="{ name: 'text'}" sortable="'name'">
+                        {{user.name}}</td>
+                    <td title="'Address'" filter="{ address: 'text'}" sortable="'address'">
+                        {{user.address}}</td>
+                    <td title="'City'" filter="{ city: 'text'}" sortable="'city'">
+                        {{user.city}}</td>
+                    <td title="'Days'" filter="{ days: 'text'}" sortable="'days'">
+                        {{user.days}}</td>
+                    <td title="'Hours'" filter="{ hours: 'text'}" sortable="'hours'">
+                        {{user.hours}}</td>
+                    <td title="'Public'" filter="{ public: 'text'}" sortable="'public'">
+                        {{user.public}}</td>
+                    <td title="'Country'" filter="{ country: 'text'}" sortable="'country'">
+                        {{user.country}}</td>
+                </tr>
+            </table>
+        </uib-tab>
+        <uib-tab index="1" heading="Map">
+            To be done
+        </uib-tab>
 
-    <table ng-table="dojo.tableParams" class="table" show-filter="true">
-        <tr ng-repeat="user in $data">
-            <td title="'Name'" filter="{ name: 'text'}" sortable="'name'">
-                {{user.name}}</td>
-            <td title="'Address'" filter="{ address: 'text'}" sortable="'address'">
-                {{user.address}}</td>
-            <td title="'City'" filter="{ city: 'text'}" sortable="'city'">
-                {{user.city}}</td>
-            <td title="'Days'" filter="{ days: 'text'}" sortable="'days'">
-                {{user.days}}</td>
-            <td title="'Hours'" filter="{ hours: 'text'}" sortable="'hours'">
-                {{user.hours}}</td>
-            <td title="'Public'" filter="{ public: 'text'}" sortable="'public'">
-                {{user.public}}</td>
-            <td title="'Country'" filter="{ country: 'text'}" sortable="'country'">
-                {{user.country}}</td>
-        </tr>
-    </table>
+        <uib-tab index="2" heading="Add a dojo">
+            To be done
+        </uib-tab>
 
+    </uib-tabset>
 </body>
 
 

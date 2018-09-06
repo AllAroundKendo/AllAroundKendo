@@ -1,6 +1,6 @@
 'use strict';
 // Define the `AllAroundKendo` module
-var AllAroundKendo = angular.module('AllAroundKendo', ["ngTable"]);
+var AllAroundKendo = angular.module('AllAroundKendo', ["ngTable", 'ui.bootstrap']);
 
 // Define the `DojoController` controller on the `AllAroundKendo` module
 AllAroundKendo.controller('DojoController', function DojoController($scope, $http, NgTableParams) {
